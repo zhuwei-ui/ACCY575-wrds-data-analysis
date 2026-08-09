@@ -3,8 +3,14 @@ name = "accy575-wrds-data-analysis"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.14"
-dependencies = []
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "pandas>=2.2.3",
+    "pandera>=0.32.1",
+    "pyarrow>=25.0.0",
+    "sec-parser>=0.58.1",
+    "wrds>=3.5",
+]
 
 [project.scripts]
 accy575-wrds-data-analysis = "accy575_wrds_data_analysis:main"
@@ -12,3 +18,10 @@ accy575-wrds-data-analysis = "accy575_wrds_data_analysis:main"
 [build-system]
 requires = ["uv_build>=0.12.2,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "jupyterlab>=4.6.2",
+    "pytest>=9.1.1",
+]
