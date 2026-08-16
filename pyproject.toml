@@ -10,8 +10,11 @@ dependencies = [
     "pandas>=2.2.3",
     "pandera>=0.32.1",
     "pyarrow>=25.0.0",
+    "sentence-transformers>=5.7.0",
     "shap>=0.50.0",
     "statsmodels>=0.14.6",
+    "torch>=2.13.0",
+    "transformers>=5.14.1",
     "wrds>=3.5",
     "xgboost>=3.2.0",
 ]
@@ -32,3 +35,11 @@ dev = [
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
